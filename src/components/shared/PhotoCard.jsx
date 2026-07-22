@@ -1,0 +1,43 @@
+import { Button, Card, Chip, Separator } from "@heroui/react";
+import Image from "next/image";
+import { BsHeartbreak } from "react-icons/bs";
+import { IoCloudDownloadSharp } from "react-icons/io5";
+
+
+const PhotoCard = ({photo}) => {
+    return (
+          <Card className="border rounded-xl">
+                <div className="relative w-full aspect-square">
+                  <Image
+                  src={photo.imageUrl}
+                  alt={photo.title}
+                   fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover rounded-xl"
+                 />
+                   <Chip className="absolute right-2 top-2">{photo.category}</Chip>
+                 </div>   
+                                        
+                <div>
+                       <h1 className="font-medium">{photo.title}</h1>
+                </div>
+                   
+                 <div className="flex gap-5">
+                     <div className="flex items-center gap-2">
+                    <p><BsHeartbreak /></p>
+                    <p>{photo.likes}</p>
+                   </div>
+
+                   <Separator orientation="vertical"/>
+
+                <div className="flex items-center gap-2">
+                    <p><IoCloudDownloadSharp /></p>
+                    <p>{photo.downloads}</p>
+                </div>
+                 </div>
+                 <Button variant="outline" className="w-full">View</Button>
+          </Card>
+    );
+};
+
+export default PhotoCard;
