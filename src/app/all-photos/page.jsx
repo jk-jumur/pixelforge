@@ -4,7 +4,7 @@ import PhotoCard from "@/components/shared/PhotoCard";
 const AllPhotosPage = async () => {
      const res = await fetch("https://pixelforge-ivory.vercel.app/data.json")
      const photos = await res.json();
-     console.log(photos);
+    
     return (
         <div>
              <h1 className="text-2xl font-bold m-4">All Photos</h1>
