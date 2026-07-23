@@ -1,4 +1,6 @@
 import PhotoCard from "@/components/shared/PhotoCard";
+import { Card } from "@heroui/react";
+import Image from "next/image";
 
 
 const AllPhotosDetailsPage = async({params}) => {
@@ -9,11 +11,23 @@ const AllPhotosDetailsPage = async({params}) => {
 
         return (
         <div>
-                <div>
+               <Card className="border mx-auto">
+<Card className="mx-auto overflow-hidden">
+  <Image
+    src={photo.imageUrl}
+    alt={photo.title}
+    width={1200}
+    height={800}
+    className="w-full h-auto rounded-xl"
+  />
+</Card>
+                   <div>
                            
                      <h1>{photo.title}</h1>                          
                      <p>{photo.prompt}</p>
-                 </div>      
+                 </div> 
+               </Card>
+                    
         </div>
     );
 };
