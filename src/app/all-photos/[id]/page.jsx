@@ -12,7 +12,7 @@ const AllPhotosDetailsPage = async({params}) => {
         return (
         <div>
              
-<Card className="mx-auto overflow-hidden">
+<Card className="mx-auto overflow-hidden mt-5">
   <Image
     src={photo.imageUrl}
     alt={photo.title}
